@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import authRoutes from "./routes/authRoutes.js";
+import usersRoutes from "./routes/userRoutes.js"
 
 const app = express();
 const port = 8080;
@@ -21,4 +22,6 @@ app.listen(port, () => {
 
 app.use(express.json());
 app.use(cors());
+
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/users", usersRoutes);
