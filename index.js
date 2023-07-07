@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import authRoutes from "./routes/authRoutes.js";
 import usersRoutes from "./routes/userRoutes.js";
+import productsRoutes from "./routes/productRoutes.js";
 import { errorHandler } from "./controllers/errorController.js";
 
 const app = express();
@@ -26,4 +27,5 @@ app.use(cors());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/users", usersRoutes);
+app.use("/api/v1/products", productsRoutes);
 app.use(errorHandler);

@@ -26,7 +26,7 @@ const productSchema = new mongoose.Schema(
     },
     countInStock: {
       type: Number,
-      required: true,
+      required: [true, "Please provide the available stock of the product"],
       default: 5,
     },
     rating: {
@@ -51,11 +51,6 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       required: [true, "Please provide a category for the product"],
-    },
-    quantity: {
-      type: Number,
-      required: [true, "Please provide the available quantity of the product"],
-      min: [0, "Quantity must be a non-negative number"],
     },
   },
   {
