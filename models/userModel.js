@@ -24,6 +24,11 @@ const userSchema = new mongoose.Schema({
     minlength: 8,
     select: false,
   },
+  role: {
+    type: String,
+    required: [true, "Please provide user role"],
+    enum: ["customer", "seller", "admin"],
+  },
 });
 
 //password hashing middleware
