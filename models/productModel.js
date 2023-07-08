@@ -28,6 +28,7 @@ const productSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Please provide the available stock of the product"],
       default: 5,
+      min:0
     },
     rating: {
       type: Number,
